@@ -51,6 +51,7 @@ This template includes several example tools in the `tools/` directory:
 - `filePermissions.ts`: Changes file permissions
 - `directoryCreate.ts`: Creates a new directory
 - `directoryList.ts`: Lists directory contents with details
+- `directoryTree.ts`: Generates a tree diagram of a directory structure
 
 ## Related packages
 
