@@ -3,6 +3,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import { loadTools } from "./toolLoader.js";
 
 const packageJson = require("../package.json") as any;
 
@@ -45,6 +46,9 @@ server.tool(
 // Start the server
 async function run() {
   try {
+    // Load tools from the tools directory
+    await loadTools(server);
+
     // Use stdio for transport
     const transport = new StdioServerTransport();
     await server.connect(transport);
